@@ -2,8 +2,8 @@
 require('dotenv').config();
 const mongoose = require('mongoose');
 
-
-mongoose.connect(process.env.DATABASE_URL, { useUnifiedTopology: true, useNewUrlParser: true })
+mongoose.connect('mongodb://localhost/products', { useUnifiedTopology: true, useNewUrlParser: true })
+// mongoose.connect(process.env.DATABASE_URL, { useUnifiedTopology: true, useNewUrlParser: true })
   .catch((error) => console.log(error));
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
